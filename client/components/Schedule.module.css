@@ -1,0 +1,10 @@
+.ranges {
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  background-color: white;
+  border: 2px solid rgba(161, 161, 161, 0.733);
+  border-bottom: 2px solid rgb(107, 107, 107);
+  border-radius: 3px;
+  padding: 8px;
+}
