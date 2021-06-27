@@ -10,7 +10,7 @@ const WorkHours = ({ start, end }) => {
     <div id="workHours" className={css.workHours}>
       <div className={css.label}>
         Hours
-        <button type="button" onClick={() => { click(!clicked); }}>
+        <button data-testid="button" type="button" onClick={() => { click(!clicked); }}>
           {clicked
             ? (
               <i className="fa fa-chevron-up" />
@@ -21,7 +21,7 @@ const WorkHours = ({ start, end }) => {
       </div>
       {clicked
         ? (
-          <div id={css.hoursInfo}>
+          <div id={css.hoursInfo} data-testid="hoursInfo">
             <div id="startTime" className={css.startTime}>
               <div>
                 Start:

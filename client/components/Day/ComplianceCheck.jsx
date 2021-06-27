@@ -10,13 +10,13 @@ const ComplianceCheck = ({ hours }) => {
       {'  '}
       {hours >= 56
         ? (
-          <i className={`fa fa-exclamation-triangle ${css.red}`} onMouseEnter={() => { setDisplay(true); }} onMouseLeave={() => { setDisplay(false); }} />
+          <i data-testid="icon" className={`fa fa-exclamation-triangle ${css.red}`} onMouseEnter={() => { setDisplay(true); }} onMouseLeave={() => { setDisplay(false); }} />
         ) : (
-          <i className={`fa fa-check-square ${css.green}`} onMouseEnter={() => { setDisplay(true); }} onMouseLeave={() => { setDisplay(false); }} />
+          <i data-testid="icon" className={`fa fa-check-square ${css.green}`} onMouseEnter={() => { setDisplay(true); }} onMouseLeave={() => { setDisplay(false); }} />
         )}
       {display
         ? (
-          <div id={css.modal}>
+          <div id={css.modal} data-testid="modal">
             {`${hours} hrs`}
           </div>
         ) : ''}
