@@ -1,21 +1,9 @@
 const dailyData = require('./dailyData');
 
-const daysInMonth = {
-  0: 31,
-  1: 28,
-  2: 31,
-  3: 30,
-  4: 31,
-  5: 30,
-  6: 31,
-  7: 31,
-  8: 30,
-  9: 31,
-  10: 30,
-  11: 31,
-};
-
 function findWeek(date) {
+  const daysInMonth = {
+    0: 31, 1: 28, 2: 31, 3: 30, 4: 31, 5: 30, 6: 31, 7: 31, 8: 30, 9: 31, 10: 30, 11: 31,
+  };
   let year = date.getFullYear();
   let month = date.getMonth();
   const DOM = date.getDate();
@@ -35,16 +23,16 @@ function findWeek(date) {
   return findWeek(new Date(year, month, daysInMonth[month] - (DOW - DOM)));
 }
 
-function transform(dailyData) {
+function transform(dayData) {
   const res = {};
-  Object.keys(dailyData).forEach((day) => {
+  Object.keys(dayData).forEach((day) => {
     const week = findWeek(new Date(day));
     if (!res[week]) {
       res[week] = {
-        days: [dailyData[day]],
+        days: [dayData[day]],
       };
     } else {
-      res[week].days.push(dailyData[day]);
+      res[week].days.push(dayData[day]);
     }
   });
   return res;
@@ -67,6 +55,6 @@ function weeklyMeta(weeklyData) {
   return res;
 }
 
-// console.log(weeklyMeta(transform(dailyData)));
+console.log(Object.keys(weeklyMeta(transform(dailyData))));
 
 module.exports = weeklyMeta(transform(dailyData));

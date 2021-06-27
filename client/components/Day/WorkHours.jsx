@@ -20,7 +20,7 @@ const WorkHours = ({ start, end }) => {
         </button>
       </div>
       {clicked
-        ? (
+        && (
           <div id={css.hoursInfo} data-testid="hoursInfo">
             <div id="startTime" className={css.startTime}>
               <div>
@@ -39,7 +39,7 @@ const WorkHours = ({ start, end }) => {
               </div>
             </div>
           </div>
-        ) : ''}
+        )}
     </div>
   );
 };

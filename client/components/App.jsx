@@ -29,8 +29,13 @@ const App = () => {
         </button>
         <div id="current" className={css.current} data-testid={week}>
           Driver&apos;s Schedule: Week of
-          {' '}
-          {week}
+          <div id={css.currentWeek}>
+            <select id={css.select} onChange={(e) => { setWeek(e.target.value); }}>
+              {Object.keys(weeklyData).map((w) => (
+                <option key={w} value={w} selected={w === week}>{w}</option>
+              ))}
+            </select>
+          </div>
         </div>
         <button id="right" className={css.right} type="button" onClick={() => { setWeek(changeWeek(week, 'right')); }}>
           <i className="fa fa-arrow-right" />

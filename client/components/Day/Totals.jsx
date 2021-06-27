@@ -20,7 +20,7 @@ const Totals = ({ hours, pay }) => {
         </button>
       </div>
       {clicked
-        ? (
+        && (
           <div id={css.totalsInfo} data-testid="totalsInfo">
             <div id="dailyHours" className={css.dailyHours}>
               <div>
@@ -40,7 +40,7 @@ const Totals = ({ hours, pay }) => {
               </div>
             </div>
           </div>
-        ) : ''}
+        )}
     </div>
   );
 };

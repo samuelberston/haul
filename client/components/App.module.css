@@ -15,15 +15,36 @@
   justify-content: space-between;
   align-items: center;
   width: 550px;
-  border: 2px solid rgba(114, 114, 114, 0.733);
+  border: 2px solid rgba(138, 138, 138, 0.733);
   font-size: 24px;
-  background-color: rgb(252, 252, 252);
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
+}
+
+select {
+  font-size: 22px;
+  border: none;
+  border-bottom: 2px solid rgb(126, 126, 126);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+select:hover {
+  padding-top: 1px;
+  border-bottom: 3px solid rgb(63, 63, 63);
+}
+
+select:focus {
+  outline: none;
 }
 
 .current {
   display: flex;
   align-items: center;
+}
+
+#currentWeek {
+  padding: 10px;
 }
 
 .right, .left {
