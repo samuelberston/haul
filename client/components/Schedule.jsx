@@ -7,8 +7,8 @@ import css from './Schedule.module.css';
 
 const Schedule = ({ weekData }) => (
   <div id="schedule" className={css.ranges}>
-    {weekData.map((day, i) => (
-      <Day key={i} day={day} />
+    {weekData.map((day) => (
+      <Day key={day.range[0]} day={day} />
     ))}
   </div>
 );
