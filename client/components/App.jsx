@@ -25,7 +25,7 @@ const App = () => {
     <div id="reactApp" className={css.reactApp}>
       <div id="navigation" className={css.nav}>
         <button id="left" className={css.left} type="button" onClick={() => { setWeek(changeWeek(week, 'left')); }}>
-          <i className="fa fa-arrow-left" />
+          {Object.keys(weeklyData).indexOf(week) > 0 && (<i className="fa fa-arrow-left" />)}
         </button>
         <div id="current" className={css.current} data-testid={week}>
           Driver&apos;s Schedule: Week of
@@ -38,7 +38,7 @@ const App = () => {
           </div>
         </div>
         <button id="right" className={css.right} type="button" onClick={() => { setWeek(changeWeek(week, 'right')); }}>
-          <i className="fa fa-arrow-right" />
+          {Object.keys(weeklyData).indexOf(week) < Object.keys(weeklyData).length - 1 && (<i className="fa fa-arrow-right" />)}
         </button>
       </div>
       <Schedule weekData={weeklyData[week].days} />
