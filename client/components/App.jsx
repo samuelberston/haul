@@ -28,7 +28,7 @@ const App = () => {
           {Object.keys(weeklyData).indexOf(week) > 0 && (<i className="fa fa-arrow-left" />)}
         </button>
         <div id="current" className={css.current} data-testid={week}>
-          Driver&apos;s Schedule: Week of
+          Week of:
           <div id={css.currentWeek}>
             <select id={css.select} onChange={(e) => { setWeek(e.target.value); }}>
               {Object.keys(weeklyData).map((w) => (

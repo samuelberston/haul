@@ -125,3 +125,36 @@
   bottom: 36px;
   right: 23px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .day {
+    width: 98%;
+    height: max-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid grey;
+    margin-bottom: 7px;
+    background-color: whitesmoke;
+  }
+
+  .dow {
+    width: 100%;
+  }
+
+  .dayInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workHours, .totals {
+    width: 100%;
+    margin: 2px;
+    padding: 2px;
+  }
+}

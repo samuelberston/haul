@@ -2,3 +2,10 @@
   position: relative;
   top: 20%;
 }
+
+@media only screen and (max-width: 1000px) {
+  #app {
+    margin: 1px;
+    top: 0%;
+  }
+}
