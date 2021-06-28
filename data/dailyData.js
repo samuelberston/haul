@@ -31,6 +31,7 @@ function transform(data) {
       ],
       hours,
       pay,
+      date,
     };
   });
 

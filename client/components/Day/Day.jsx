@@ -23,21 +23,18 @@ function getDOW(range) {
 }
 
 const Day = ({ day }) => {
-  const { hours, pay, range } = day;
+  const { date, hours, pay, range } = day;
   return (
     <div key={getDOW(day)} id="day" className={css.day}>
       <div id="DOW" className={css.dow}>
         {getDOW(range)}
           &nbsp;
-        {`${new Date(range[0]).getMonth() + 1}/${new Date(range[0]).getDate()}`}
+        {date.split('/').slice(0, 2).join('/')}
       </div>
       <div id="dayInfo" className={css.dayInfo}>
         <WorkHours start={range[0]} end={range[1]} />
         <Totals hours={hours} pay={pay} />
-        <ComplianceCheck hours={complianceData[
-          `${new Date(range[0]).getMonth() + 1}/${new Date(range[0]).getDate()}/${new Date(range[0]).getFullYear()}`
-        ]}
-        />
+        <ComplianceCheck hours={complianceData[date]} />
       </div>
     </div>
   );
