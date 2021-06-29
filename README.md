@@ -2,7 +2,6 @@
 
 Tech Stack
  - React Hooks with CSS modules (mobile responsive)
- - Data manipulation in node
  - Express server
  - 98% testing coverage with jest/react-testing-library
 
